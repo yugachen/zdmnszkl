@@ -32,12 +32,12 @@
       animation: float 3s ease-in-out infinite;
       z-index: 10;
     }
-    .ribbon:nth-child(2) {
+    .ribbon:nth-of-type(1) {  /* 第一個彩帶，左上 */
       top: 10px;
       left: 10px;
       animation-delay: 0s;
     }
-    .ribbon:nth-child(3) {
+    .ribbon:nth-of-type(2) {  /* 第二個彩帶，右上 */
       top: 10px;
       right: 10px;
       background: #ffb6c1;
@@ -57,6 +57,8 @@
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       border: 5px solid #fff0f5;
       background-color: #fff0f5;
+      z-index: 1;
+      position: relative; /* 避免被絕對定位元素遮蓋 */
     }
     img:hover {
       transform: scale(1.05);
@@ -66,7 +68,6 @@
 </head>
 <body>
   <h1>祝漂白老么生日快樂！永遠18歲~~</h1>
-  <p></p>
   <img id="myImage" src="image1.png" alt="圖片1" />
 
   <div class="ribbon"></div>
