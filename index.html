@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>周大美女生日快樂</title>
+  <style>
+    body {
+      background: linear-gradient(135deg, #fceabb, #f8b500);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+    /* 彩帶裝飾 */
+    .ribbon {
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      background: #ff69b4;
+      clip-path: polygon(0 0, 100% 0, 100% 75%, 50% 100%, 0 75%);
+      animation: float 3s ease-in-out infinite;
+    }
+    .ribbon:nth-child(1) {
+      top: 10px;
+      left: 10px;
+      animation-delay: 0s;
+    }
+    .ribbon:nth-child(2) {
+      top: 10px;
+      right: 10px;
+      background: #ffb6c1;
+      animation-delay: 1.5s;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(15px); }
+    }
+
+    img {
+      cursor: pointer;
+      max-width: 300px;
+      height: auto;
+      border-radius: 20px;
+      box-shadow: 0 8px 20px rgba(255, 105, 180, 0.6);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 5px solid #fff0f5;
+      background-color: #fff0f5;
+    }
+    img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 12px 30px rgba(255, 105, 180, 0.9);
+    }
+  </style>
+</head>
+<body>
+<h1>祝漂白老么生日快樂！永遠都是18歲~~</h1>
+<div class="ribbon"></div>
+<div class="ribbon"></div>
+
+<img id="myImage" src="image1.png" alt="圖片1">
+
+<script>
+  const img = document.getElementById('myImage');
+  const img1 = 'image1.png';  
+  const img2 = 'image2.jpg';  
+
+  img.addEventListener('click', () => {
+    if (img.src.includes(img1)) {
+      img.src = img2;
+      img.alt = 'image2';
+    } else {
+      img.src = img1;
+      img.alt = 'image1';
+    }
+  });
+</script>
+
+</body>
+</html>
